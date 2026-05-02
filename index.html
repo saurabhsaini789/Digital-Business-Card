@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Saini - Digital Business Card</title>
+    <meta name="description" content="Digital business card for Saurabh Saini.">
+    <!-- Inline Critical CSS for maximum performance -->
+    <style>
+        :root {
+            /* Light Theme (Default) */
+            --bg-color: #f3f4f6; /* Subtle off-white background */
+            --surface-color: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --accent-color: #111827; /* Dark accent for high contrast */
+            --accent-hover: #374151;
+            --accent-text: #ffffff;
+            --btn-bg: #f9fafb;
+            --btn-hover: #e5e7eb;
+            --border-color: #e5e7eb;
+        }
+
+        /* Auto Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f1115; /* Deep dark background */
+                --surface-color: #181b21;
+                --text-primary: #f9fafb;
+                --text-secondary: #9ca3af;
+                --accent-color: #f9fafb; /* Light accent for dark mode */
+                --accent-hover: #e5e7eb;
+                --accent-text: #111827;
+                --btn-bg: #22262e;
+                --btn-hover: #2d333b;
+                --border-color: #2d333b;
+            }
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            /* System fonts for zero-latency loading */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            min-height: 100dvh; /* Mobile viewport height fix */
+            padding: 16px;
+            overflow: hidden; /* Prevent scrolling for app-like feel */
+        }
+
+        /* Card Layout */
+        .card {
+            background-color: var(--surface-color);
+            border-radius: 28px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 0 2px rgba(0, 0, 0, 0.03);
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 24px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            max-height: 100%;
+            overflow-y: auto; /* Fallback for very small screens */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .card::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Top Section */
+        .profile-img {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            margin: 0 auto 24px;
+            background-color: var(--btn-bg);
+            border: 1px solid var(--border-color);
+            /* Remove border if you have a transparent PNG/SVG */
+        }
+
+        .name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .value-prop {
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin-bottom: 32px;
+            padding: 0 12px;
+            font-weight: 400;
+        }
+
+        /* Action Buttons */
+        .buttons-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.1s ease, background-color 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            outline: none;
+            -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
+        }
+
+        .btn:active {
+            transform: scale(0.97); /* Subtle tap feedback */
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--accent-text);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: var(--btn-bg);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--btn-hover);
+        }
+
+        .btn-icon {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Micro Proof */
+        .micro-proof {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .micro-proof::before, .micro-proof::after {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card">
+        <!-- 1. PROFILE IMAGE (Optional) -->
+        <!-- Replace src with your optimized image (e.g., 'profile.webp' or 'profile.jpg') -->
+        <!-- Keep image under 50KB for instant loading -->
+        <img src="Profile Picture.png" alt="Saurabh Saini" class="profile-img">
+
+        <!-- 2. TOP SECTION -->
+        <h1 class="name">Saurabh Saini</h1>
+        <div class="title">Instructional Designer</div>
+        <p class="value-prop">I design structured, engaging learning experiences that turn complex ideas into clear, effective courses.</p>
+
+        <!-- 3. PRIMARY ACTION BUTTONS -->
+        <div class="buttons-grid">
+            
+            <!-- Save Contact Button (Generates and downloads vCard) -->
+            <button class="btn btn-primary" onclick="downloadVCard()">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Save Contact
+            </button>
+
+            <!-- External Link 1: Portfolio -->
+            <!-- Add your links to the href attribute -->
+            <a href="https://iamsaurabhsaini.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                View Portfolio
+            </a>
+
+            <!-- External Link 2: LinkedIn -->
+            <a href="https://www.linkedin.com/in/iamsaurabhsaini/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.16-3.8c-1.1 0-1.83.58-2.15 1.1v-.9h-2.39v9h2.39v-4.73c0-1.2.22-2.39 1.62-2.39 1.34 0 1.36 1.41 1.36 2.47v4.73h2.33M7.34 8.22c.76 0 1.38-.63 1.38-1.39A1.39 1.39 0 1 0 7.34 8.22M8.54 18.5h-2.4v-9h2.4v9z"/></svg>
+                Connect on LinkedIn
+            </a>
+
+            <!-- Contact Link: Email or WhatsApp -->
+            <!-- For WhatsApp use: href="https://wa.me/1234567890" -->
+            <a href="mailto:saurabhsaini789@gmail.com" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Email Me
+            </a>
+        </div>
+
+        <!-- 4. MICRO-PROOF -->
+        <div class="micro-proof">Designed multiple learning programs and courses</div>
+    </main>
+
+    <!-- Ultra-lightweight JS strictly for vCard generation -->
+    <script>
+        function downloadVCard() {
+            // ---> UPDATE YOUR CONTACT DETAILS HERE <---
+            const contact = {
+                firstName: "Saurabh",
+                lastName: "Saini",
+                phone: "+1 905-781-2687", // Important for Save Contact
+                email: "saurabhsaini789@gmail.com",
+                title: "Instructional Designer",
+                url: "https://iamsaurabhsaini.com/",
+                linkedin: "https://www.linkedin.com/in/iamsaurabhsaini/"
+            };
+
+            // Formatting vCard 3.0 String
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${contact.lastName};${contact.firstName};;;
+FN:${contact.firstName} ${contact.lastName}
+TITLE:${contact.title}
+TEL;TYPE=CELL:${contact.phone}
+EMAIL;TYPE=WORK:${contact.email}
+URL:${contact.url}
+URL;TYPE=LinkedIn:${contact.linkedin}
+END:VCARD`;
+
+            // Create Blob and trigger instant download
+            const blob = new Blob([vcard], { type: "text/vcard" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `${contact.firstName}_${contact.lastName}.vcf`;
+            document.body.appendChild(a);
+            a.click();
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 100);
+        }
+    </script>
+</body>
+</html>
