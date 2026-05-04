@@ -8,41 +8,43 @@
     
     <!-- PWA / Mobile App Meta Tags -->
     <link rel="manifest" href="manifest.json?v=4">
-    <meta name="theme-color" content="#111827">
+    <meta name="theme-color" content="#0f1115">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
-    <link rel="apple-touch-icon" href="apple-touch-icon-new.png?v=4">
+    <link rel="icon" type="image/png" href="Logo V3 - PNG.png">
+    <link rel="apple-touch-icon" href="Logo V3 - PNG.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Inline Critical CSS for maximum performance -->
     <style>
         :root {
-            /* Light Theme (Default) */
-            --bg-color: #f3f4f6; /* Subtle off-white background */
-            --surface-color: #ffffff;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-            --accent-color: #111827; /* Dark accent for high contrast */
-            --accent-hover: #374151;
-            --accent-text: #ffffff;
-            --btn-bg: #f9fafb;
-            --btn-hover: #e5e7eb;
-            --border-color: #e5e7eb;
+            /* Using user-provided color palette */
+            --bg-color: #0f1115; /* Deep dark background */
+            --surface-color: #181b21;
+            --text-primary: #f7f3eb; /* Off-white text */
+            --text-secondary: #ffffff; /* Pure white for contrast */
+            --accent-color: #ffcc66; /* Vibrant yellow/gold accent */
+            --accent-hover: #e6b85c;
+            --accent-text: #0f1115;
+            --btn-bg: #22262e;
+            --btn-hover: #2d333b;
+            --border-color: #2d333b;
         }
 
-        /* Auto Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
+        /* Consistent theme based on requested colors */
+        @media (prefers-color-scheme: light) {
             :root {
-                --bg-color: #0f1115; /* Deep dark background */
-                --surface-color: #181b21;
-                --text-primary: #f9fafb;
-                --text-secondary: #9ca3af;
-                --accent-color: #f9fafb; /* Light accent for dark mode */
-                --accent-hover: #e5e7eb;
-                --accent-text: #111827;
-                --btn-bg: #22262e;
-                --btn-hover: #2d333b;
-                --border-color: #2d333b;
+                /* Even in light mode, we'll maintain the aesthetic requested */
+                --bg-color: #f7f3eb;
+                --surface-color: #ffffff;
+                --text-primary: #0f1115;
+                --text-secondary: #4b5563;
+                --accent-color: #ffcc66;
+                --accent-hover: #e6b85c;
+                --accent-text: #0f1115;
+                --btn-bg: #f3f4f6;
+                --btn-hover: #e5e7eb;
+                --border-color: #e5e7eb;
             }
         }
 
@@ -56,17 +58,18 @@
         }
 
         body {
-            /* System fonts for zero-latency loading */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            min-height: 100dvh; /* Mobile viewport height fix */
-            padding: 16px;
-            overflow: hidden; /* Prevent scrolling for app-like feel */
+            min-height: 100dvh;
+            padding: 24px 16px;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* Card Layout */
@@ -199,6 +202,28 @@
             height: 1px;
             background-color: var(--border-color);
         }
+
+        /* Attribution */
+        .attribution {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 24px;
+            font-weight: 500;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .attribution a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -247,6 +272,10 @@
         <!-- 4. MICRO-PROOF -->
         <div class="micro-proof">Designed multiple learning programs and courses</div>
     </main>
+
+    <footer class="attribution">
+        created by <a href="https://iamsaurabhsaini.com/" target="_blank" rel="noopener noreferrer">Saurabh Saini</a>
+    </footer>
 
     <!-- Ultra-lightweight JS strictly for vCard generation -->
     <script>
